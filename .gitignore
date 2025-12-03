@@ -1,55 +1,47 @@
-# Prerequisites
+# ============ 编译输出和中间文件 ============
+# 你的构建目录 - 核心规则
+Build/
+
+# Keil MDK-ARM 生成文件
+*.axf
+*.crf
 *.d
-
-# Object files
-*.o
-*.ko
-*.obj
+*.dep
 *.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
 *.hex
+*.bin
+*.lst
+*.map
+*.lnp
+*.log
+*.htm
+*.sct
+*.iex
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Keil 临时和对象文件（如果未放在Build/内）
+*.o
+*.obj
+*.d
+*.bkp
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# ============ IDE和编辑器临时文件 ============
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# debug information files
-*.dwo
+# Keil 项目文件 (通常需保留，但工作区文件可忽略)
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+*.uvmpw
+
+# ============ 系统文件 ============
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
