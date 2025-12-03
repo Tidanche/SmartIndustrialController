@@ -1,0 +1,2 @@
+# SmartIndustrialController
+基于STM32H750的工业控制系统，主要用于复习各驱动编写，H7不支持STd库因此使用HAL库
