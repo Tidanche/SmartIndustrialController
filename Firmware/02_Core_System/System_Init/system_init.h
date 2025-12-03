@@ -1,11 +1,10 @@
-#include "system_init.h"
+#ifndef __SYSTEM_INIT_H
+#define __SYSTEM_INIT_H
 
-void System_Init(void)
-{
-    HAL_Init();
-}
+#include "stm32h7xx.h"
+#include "stm32h7xx_hal.h"
 
-void Error_Handler(void)
-{
-    while(1);
-}
+void System_Init(void);
+void Error_Handler(void);
+
+#endif // !__SYSTEM_INIT_H
