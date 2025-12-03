@@ -1,0 +1,67 @@
+{
+    "configurations": [
+        {
+            "name": "Keil-ARM-Project",
+            "includePath": [
+                // 项目本地头文件（相对路径）
+                "${workspaceFolder}\\Firmware\\01_HAL_BSP\\**",
+                "${workspaceFolder}\\Firmware\\02_Core_System\\System_Init",
+                "${workspaceFolder}\\Firmware\\07_Application",
+                "${workspaceFolder}\\Firmware\\Device\\**",
+                // Keil编译器标准头文件（绝对路径）
+                "E:\\Software\\Code\\Keil_V5\\ARM\\ARMCC\\include", // ARMCC编译器头文件
+                // 芯片包头文件（根据实际芯片修改）
+                "E:\\Software\\Code\\Keil_V5\\ARM\\Pack\\ARM\\CMSIS\\4.5.0\\CMSIS\\Include",
+                "E:\\Software\\Code\\Keil_V5\\ARM\\Pack\\Keil\\STM32H7xx_DFP\\2.2.0\\Drivers\\CMSIS\\Device\\ST\\STM32H7xx\\Include",
+                "E:\\Software\\Code\\Keil_V5\\ARM\\Pack\\Keil\\STM32H7xx_DFP\\2.2.0\\Drivers\\STM32H7xx_HAL_Driver\\Inc"
+                // 第三方库
+                // "${workspaceFolder}\\ThirdParty\\FreeRTOS\\include",
+                // ARM CMSIS 核心头文件
+            ],
+            "defines": [
+                // 芯片定义
+                "USE_HAL_DRIVER",
+                "STM32H750xx"
+            ],
+            "compilerPath": "E:\\Software\\Code\\Keil_V5\\ARM\\ARMCC\\bin\\armcc.exe",
+            // ==================== 标准设置 ====================
+            "cStandard": "c11",
+            "cppStandard": "c++17", // 即使不使用C++也设置，某些头文件需要
+            // ==================== 智能感知模式 ====================
+            "intelliSenseMode": "gcc-arm",
+            // ==================== 强制包含文件 ====================
+            "forcedInclude": [
+                "${workspaceFolder}\\Firmware\\Device\\Startup\\stm32h7xx_hal_conf.h",
+                "${workspaceFolder}\\Firmware\\07_Application\\main.h",
+                "stdint.h"
+            ],
+            // ==================== 浏览路径 ====================
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "E:\\Software\\Code\\Keil_V5\\ARM\\Pack\\",
+                    "E:\\Software\\Code\\Keil_V5\\ARM\\ARMCC\\include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/.browse.vc.db"
+            },
+            "compilerArgs": [
+                "-mcpu=cortex-m7",
+                "-mthumb",
+                "-mfpu=fpv5-d16",
+                "-mfloat-abi=hard",
+                "--target=arm-arm-none-eabi",
+                "-DUSE_HAL_DRIVER",
+                "-DSTM32H750xx",
+                "-DARM_MATH_CM7",
+                "-D__CC_ARM",
+                "-D__FPU_PRESENT=1",
+                "-D__FPU_USED=1",
+                "-fgnu89-inline", // GNU C89内联语法
+                "-fms-extensions", // 微软扩展（某些头文件需要）
+                "-Wno-microsoft-anon-tag" // 忽略匿名结构体警告
+            ]
+        }
+    ],
+    "version": 4
+}
